@@ -25,5 +25,8 @@ jobs:
             - name: "Install independencies"
               run: npm install
 
+            - name: "List directories"
+              run: lsS
+
 
 
