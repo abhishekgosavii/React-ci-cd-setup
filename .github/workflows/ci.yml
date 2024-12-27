@@ -45,3 +45,5 @@ jobs:
               with:
                 name: build
                 path: dist
+
+# this is steps of steps to making the react pipeline workflow.
