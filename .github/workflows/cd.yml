@@ -26,10 +26,11 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: build
-                run-id: ${{ github.event.workflow_run.id }}
-                github-token: ${{ github.token }}
+                run-id: ${{ github.event.workflow_run.id }} # this is the run id using this we are able to identify from which workflow it is start downloading artifact
+                github-token: ${{ github.token }} #able to access the corresponding repository , without this cd.yml can not able to communicate with ci.yml
             
             - name: "Deploy to vercel"
               run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --name=cicdproject
-
+          #  Access environemntal secret inside linux maschine
+          # {{ secrets.VERCEL_TOKEN }} this is the address where from we are access the token ( readd in the syntax of git actions context tokens syntex)
 
